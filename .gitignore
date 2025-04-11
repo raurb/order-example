@@ -1,5 +1,6 @@
 .DS_Store
 .idea/
+docker/database/volumes
 ###> symfony/framework-bundle ###
 app/.env.local
 app./.env.local.php
@@ -11,6 +12,6 @@ app/vendor/
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
-/phpunit.xml
-/.phpunit.cache/
+app/phpunit.xml
+app/.phpunit.cache/
 ###< phpunit/phpunit ###
