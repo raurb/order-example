@@ -1,0 +1,35 @@
+name: 'order-example'
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    platform: linux/arm64
+    container_name: 'order-example'
+    restart: 'no'
+    tty: true
+    volumes:
+      - ../app/:/var/www/app
+    environment:
+      - HOSTNAME=order-example.local
+      - PHP_IDE_CONFIG=serverName=order-example.local
+    ports:
+      - '80:80'
+    links:
+      - database
+
+  database:
+    image: mysql:8.2
+    platform: linux/arm64
+    container_name: 'order-example-database'
+    restart: 'no'
+    volumes:
+      - ./database/volumes/mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: 'order-example'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3306:3306'
+
+volumes:
+  exclude:

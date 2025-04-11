@@ -1,0 +1,1 @@
+{"version":1,"defects":{"OrderExample\\Tests\\Service\\Order\\OrderServiceTest::testUpdateOrder":8},"times":{"OrderExample\\Tests\\Data\\Order\\Model\\OrderTest::testTotalPrice":0.014,"OrderExample\\Tests\\Service\\Order\\OrderServiceTest::testUpdateOrder":0.004}}
